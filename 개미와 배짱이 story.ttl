@@ -1,0 +1,39 @@
+@prefix ex: <http://example.org/fable/ant-grasshopper/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# 이야기 정의
+ex:AntAndGrasshopper rdf:type ex:Story ;
+    rdfs:label "개미와 배짱이" ;
+    ex:hasCharacter ex:Ant , ex:Grasshopper ;
+    ex:hasEvent ex:SummerEvent , ex:WinterEvent ;
+    ex:hasMoral ex:MoralLesson .
+
+# 등장인물 정의
+ex:Ant rdf:type ex:Character ;
+    rdfs:label "개미" ;
+    ex:hasTrait "부지런함" .
+
+ex:Grasshopper rdf:type ex:Character ;
+    rdfs:label "베짱이" ;
+    ex:hasTrait "노래함" .
+
+# 사건 및 결과 정의
+ex:SummerEvent rdf:type ex:Event ;
+    rdfs:label "여름" ;
+    ex:hasOutcome "개미가 식량을 비축함" .
+
+ex:WinterEvent rdf:type ex:Event ;
+    rdfs:label "겨울" ;
+    ex:hasOutcome ex:AntSuccess , ex:GrasshopperHardship .
+
+ex:AntSuccess rdf:type ex:Outcome ;
+    rdfs:label "개미는 겨울을 잘 보냄" .
+
+ex:GrasshopperHardship rdf:type ex:Outcome ;
+    rdfs:label "베짱이는 어려움을 겪음" .
+
+# 교훈 정의
+ex:MoralLesson rdf:type ex:Moral ;
+    rdfs:label "미리 준비하는 사람이 어려움을 이긴다" .
